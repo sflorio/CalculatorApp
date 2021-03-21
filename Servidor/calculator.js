@@ -1,77 +1,27 @@
-console.log("Probando Node Js, el hola mundo esta pasado de moda");
-console.log("Calculadora node.js");
-let input = "(4+63)*3";
-
-class symbol {
-    constructor(_symbol, _level){
-        this.symbol= _symbol;
-        this.level= _level;
-    }
-
-}
-
-class SymbolOperator extends symbol{
-    constructor(_symbol, _level, _operation){
-        super(_symbol, _level);
-        this._operation = _operation;
-    }
-}
-
-class Operation {
-    constructor(_a,_b, _operator){
-        this.a = _a;
-        this.b = _b;
-        this.operator = _operator;
-        this.res = null;
-    }
-
-    MakeOperation() {
-        this.res = this.operator._operation(this.a, this.b);
-    }
-
-    getResult(){
-        if (this.res == null ){
-            return "Operation have not been made."
-        }
-
-        return this.res;
-    }
-
-
-
-}
-
-const  beginSeparator = new symbol('(', 3);
-
-const endSeparator = new symbol(')', 3);
-
-const addSimbol = new SymbolOperator('+', 1, (a,b) => a+b);
-
-const substractSimbol = new SymbolOperator('-', 1, (a,b) => a-b);
-
-const multiplySimbol = new SymbolOperator('*', 2, (a,b) => a*b);
-
-const divideSimbol = new SymbolOperator("/", 2, (a,b) => a/b);
-
+let Clases = require('./models/clases.js');
+let symbol = Clases.symbol;
+let SymbolOperator = Clases.SymbolOperator;
+let Operation = Clases.Operation;
+let constants = require("./models/constants.js");
 
 const symbolMatcher = (character) => {
-    if( character === beginSeparator.symbol )
-        return beginSeparator;
+    if( character === constants.beginSeparator.symbol )
+        return constants.beginSeparator;
 
-    if( character === endSeparator.symbol )
-        return endSeparator;
+    if( character === constants.endSeparator.symbol )
+        return constants.endSeparator;
 
-    if( character === addSimbol.symbol )
-        return addSimbol;
+    if( character === constants.addSimbol.symbol )
+        return constants.addSimbol;
 
-    if( character === substractSimbol.symbol )
-        return substractSimbol;
+    if( character === constants.substractSimbol.symbol )
+        return constants.substractSimbol;
 
-    if( character === multiplySimbol.symbol )
-        return multiplySimbol;
+    if( character === constants.multiplySimbol.symbol )
+        return constants.multiplySimbol;
 
-    if( character === divideSimbol.symbol )
-        return divideSimbol;
+    if( character === constants.divideSimbol.symbol )
+        return constants.divideSimbol;
 
     if( character === isNaN)
         return null;
@@ -80,22 +30,17 @@ const symbolMatcher = (character) => {
 
 };
 
-
-let tokens = [];
-
-
-tokenizar = (inpt) => {
+var calcApp = (inpt) => {
     let tokensProcesados = [];
     let res = 0;
     if( validateInputStringLexer(input)){
-        tokensProcesados = separateInputInTokens(inpt);
+        tokensProcesados = tokenizar(inpt);
     }
     
     if( tokensProcesados.lenght > 0){
         res = calculateMathOperation(tokensProcesados);
     }
     
-
     return tokensProcesados;
 
 };
@@ -103,10 +48,6 @@ tokenizar = (inpt) => {
 var validateInputStringLexer = (input) => {
     return true;
 }
-
-
-
-
 
 var calculateMathOperation = (tokens) => {
     var a = [];
@@ -118,12 +59,12 @@ var calculateMathOperation = (tokens) => {
     tokens.forEach((element) => {
         
         if(element instanceof symbol ){
-            if(element === beginSeparator){
+            if(element === constants.beginSeparator){
                 isSubterm =true;
                 return; 
             }
 
-            if(element === endSeparator){
+            if(element === constants.endSeparator){
                 isSubterm =false;
 
                  if(a.length == 0 ){
@@ -149,7 +90,6 @@ var calculateMathOperation = (tokens) => {
 
                 return;
             }
-
         }
 
 
@@ -182,7 +122,7 @@ var calculateMathOperation = (tokens) => {
 
 
 
-separateInputInTokens = (inpt) => {
+var tokenizar = (inpt) => {
     //initialize local variables
     var tokens = [];
     var number ="";
@@ -210,28 +150,9 @@ separateInputInTokens = (inpt) => {
 
     return tokens;
 }
-/*
-var res = separateInputInTokens(input);
-console.log("Processed " + res.lenght + " termns" );
-res.forEach(e => console.log(e));
 
-*/
-/*
-var calcExample = [10, addSimbol, 5];
-var res2 = calculateMathOperation(calcExample);
-
-if(res2 == 15 )
-    console.log("Pass test 1 of calculateMathOperation res: " + res2 );
-else
-    console.log("Did not pass test 1 of calculateMathOperation res: " + res2);
-*/
-
- 
-
-var calcExample = [beginSeparator, 10, addSimbol, 5 , endSeparator, multiplySimbol, 2];
-var res3 = calculateMathOperation(calcExample);
-
-if(res3 == 30 )
-    console.log("Pass test 2 of calculateMathOperation res: " + res3 );
-else
-    console.log("Did not pass test 2 of calculateMathOperation res: " + res3);
+module.exports.symbolMatcher = symbolMatcher;
+module.exports.calcApp = calcApp;
+module.exports.validateInputStringLexer = validateInputStringLexer;
+module.exports.calculateMathOperation = calculateMathOperation;
+module.exports.tokenizar = tokenizar;
