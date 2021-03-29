@@ -18,6 +18,15 @@ var res = calImport.calculateMathOperation(operation);
 console.log("Resultado: " + res);
 */
 
+/*
+var testString = "-5*6+7/8+9/10"
+console.log("Test: " + testString);
+var testToken = calImport.tokenizar(testString);
+var operation = calImport.tokenizarOperaciones(testToken);
+var res = calImport.calculateMathOperation(operation);
+console.log("Resultado: " + res);
+*/
+
 var testString = "1+2+3+4+5+6+7+8+9+10";
 console.log("Test: " + testString);
 var testToken = calImport.tokenizar(testString);

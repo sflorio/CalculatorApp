@@ -215,7 +215,36 @@ var tokenizar = (inpt) => {
             number ="";
         }
     };
+    var inputs = [...inpt];
+    var element;
 
+    for(var ei = 0; ei< inputs.length; ei++){
+        var element =symbolMatcher(inputs[ei]);
+        
+        if( element instanceof symbol){
+           
+
+            if(element.symbol == constants.substractSimbol.symbol ){
+                if( (ei + 1) < inputs.length){
+                    if(  !isNaN(symbolMatcher(inputs[ei +1 ]) )){
+                        pushNumberInTerms();
+                        number +=element.symbol;
+                        element = constants.addSimbol;
+                        tokens.push(element);
+                        continue;
+                    }
+                }
+            }
+
+            pushNumberInTerms();
+            tokens.push(element);
+        }
+        else {
+            number +=element;
+        }
+        
+    }
+/*
     //loop for each char in string
     [...inpt].forEach(element => {
         var a = symbolMatcher(element);
@@ -228,8 +257,14 @@ var tokenizar = (inpt) => {
             number +=element;
         }
     });
-
+*/
     pushNumberInTerms();
+
+    tokens.forEach(element => {
+        if(!(element instanceof symbol)){
+            element = parseFloat(element);
+        }
+    });
 
     return tokens;
 }
