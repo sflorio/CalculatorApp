@@ -1,31 +1,96 @@
 let calImport = require("../calculator.js");
 let constants = require("../models/constants.js");
 
+/*
+console.log("Test 2: 3*6+1+2")
+var testString = "3*6+1+2"
+var testToken = calImport.tokenizar(testString);
+var operation = calImport.tokenizarOperaciones(testToken);
+var res = calImport.calculateMathOperation(operation);
+console.log("Resultado: " + res);
 
 
-let input = "(4+63)*3";
+console.log("Test: (10+5)*2")
+var testString = "(10+5)*2"
+var testToken = calImport.tokenizar(testString);
+var operation = calImport.tokenizarOperaciones(testToken);
+var res = calImport.calculateMathOperation(operation);
+console.log("Resultado: " + res);
+*/
+
+var testString = "1+2+3+4+5+6+7+8+9+10";
+console.log("Test: " + testString);
+var testToken = calImport.tokenizar(testString);
+var operation = calImport.tokenizarOperaciones(testToken);
+var res = calImport.calculateMathOperation(operation);
+console.log("Resultado: " + res);
 
 
-var res = calImport.tokenizar(input);
-console.log("Processed " + res.lenght + " termns" );
-res.forEach(e => console.log(e));
+var testString = "1*2+3^4-5*6+7/8+9/10";
+console.log("Test: " + testString);
+var testToken = calImport.tokenizar(testString);
+var operation = calImport.tokenizarOperaciones(testToken);
+var res = calImport.calculateMathOperation(operation);
+console.log("Resultado: " + res);
+
+var testString = "1*(2+3^4)-5*(6+7)/(8+9/10)"
+console.log("Test: " + testString);
+var testToken = calImport.tokenizar(testString);
+var operation = calImport.tokenizarOperaciones(testToken);
+var res = calImport.calculateMathOperation(operation);
+console.log("Resultado: " + res);
 
 
-var calcExample = [10, constants.addSimbol, 5];
-var res2 = calImport.calculateMathOperation(calcExample);
+var testString = "1*(2+3^4)-5*((6+7)/(8+9/10))";
+console.log("Test: " + testString);
+var testToken = calImport.tokenizar(testString);
+var operation = calImport.tokenizarOperaciones(testToken);
+var res = calImport.calculateMathOperation(operation);
+console.log("Resultado: " + res);
 
-if(res2 == 15 )
-    console.log("Pass test 1 of calculateMathOperation res: " + res2 );
-else
-    console.log("Did not pass test 1 of calculateMathOperation res: " + res2);
+/*
+console.log("Test: 1*(2+3*4)-5")
+var testString = "1*(2+3*4)-5"
+var testToken = calImport.tokenizar(testString);
+var operation = calImport.tokenizarOperaciones(testToken);
+var res = calImport.calculateMathOperation(operation);
+console.log("Resultado: " + res);
 
 
- 
+console.log("Test:(6+7)/(8+9/10)")
+var testString = "(6+7)/(8+9/10)"
+var testToken = calImport.tokenizar(testString);
+var operation = calImport.tokenizarOperaciones(testToken);
+var res = calImport.calculateMathOperation(operation);
+console.log("Resultado: " + res);
 
-var calcExample = [constants.beginSeparator, 10, constants.addSimbol, 5 , constants.endSeparator, constants.multiplySimbol, 2];
-var res3 = calImport.calculateMathOperation(calcExample);
+console.log("Test:(8+9/10)")
+var testString = "(8+9/10)"
+var testToken = calImport.tokenizar(testString);
+var operation = calImport.tokenizarOperaciones(testToken);
+var res = calImport.calculateMathOperation(operation);
+console.log("Resultado: " + res);
 
-if(res3 == 30 )
-    console.log("Pass test 2 of calculateMathOperation res: " + res3 );
-else
-    console.log("Did not pass test 2 of calculateMathOperation res: " + res3);
+
+console.log("Test:((6+7)/(8+9/10))")
+var testString = "((6+7)/(8+9/10))"
+var testToken = calImport.tokenizar(testString);
+var operation = calImport.tokenizarOperaciones(testToken);
+var res = calImport.calculateMathOperation(operation);
+console.log("Resultado: " + res);
+
+
+console.log("Test: 1*(2+3*4)-5*((6+7)/(8+9/10))")
+var testString = "1*(2+3*4)-5*((6+7)/(8+9/10))"
+var testToken = calImport.tokenizar(testString);
+var operation = calImport.tokenizarOperaciones(testToken);
+var res = calImport.calculateMathOperation(operation);
+console.log("Resultado: " + res);
+
+
+console.log("Test: 2^3")
+var testString = "2^3"
+var testToken = calImport.tokenizar(testString);
+var operation = calImport.tokenizarOperaciones(testToken);
+var res = calImport.calculateMathOperation(operation);
+console.log("Resultado: " + res);*/
