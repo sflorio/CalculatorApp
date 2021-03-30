@@ -1,5 +1,4 @@
 const lodashClonedeep = require("lodash.clonedeep");
-//const clone = (items) => items.map(item => Array.isArray(item) ? clone(item) : item);
 
 let Clases = require('./models/clases.js');
 let symbol = Clases.symbol;
@@ -243,21 +242,7 @@ var tokenizar = (inpt) => {
             number +=element;
         }
         
-    }
-/*
-    //loop for each char in string
-    [...inpt].forEach(element => {
-        var a = symbolMatcher(element);
-        
-        if( a instanceof symbol){
-            pushNumberInTerms();
-            tokens.push(a);
-        }
-        else {
-            number +=element;
-        }
-    });
-*/
+    } 
     pushNumberInTerms();
 
     tokens.forEach(element => {
