@@ -4,13 +4,6 @@ const io = require('socket.io')(http);
 const port = 5896;
 const calculator = require("./calculator.js");
 
-
-// app.get('/', (req, res) => {
-//   //res.send("");
-//   res.sendFile(__dirname + '/index.html');
-  
-// });
-
 io.on('connection', (socket) => {
     console.log('a user connected: id '+ socket.id);
 
