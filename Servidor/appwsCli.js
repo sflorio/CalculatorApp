@@ -44,18 +44,16 @@ var socket = require('socket.io-client')('http://localhost:5896');
 */
 var io = require('socket.io-client');
 
-var socket = io.connect('http://localhost:5896', { 
-  'forceNew': true
-}); 
+// var socket = io.connect('http://localhost:5896', { 
+//   'forceNew': true
+// }); 
 
-socket.on('connect', function(s){
-    console.log("aca hago el emit");
-    s.emit('calculate-request', "1+2+3+4+5+6+7+8+9+10");
-    console.log("aca hizo el emit");
-});
+var socket = io.connect('http://localhost:5896');
+ socket.on('connect', function(data) {
+    socket.emit('request', '1+2+3+4+5+6+7+8+9+10');
 
-socket.on('calculate-response', function(data) { 
-  console.log(data);
-});
+    socket.on('response', function(data) { 
+      console.log("La respuesta es: " + data);
+    });
 
-
+ });

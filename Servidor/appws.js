@@ -13,14 +13,16 @@ const calculator = require("./calculator.js");
 
 io.on('connection', (socket) => {
     console.log('a user connected: id '+ socket.id);
-  });
-  
-  io.on('calculate-request', function(data) {      
+
+    socket.on('request', function(data) {      
       console.log(data);
       var res = calculator.calcApp(data);
       console.log(res);
-      io.sockets.emit('calculate-response', res);
+      socket.emit('response', res);
   });
+});
+  
+  
 
 http.listen(port, () => {
   console.log('listening on *:' + port);

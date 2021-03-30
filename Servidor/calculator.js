@@ -36,7 +36,7 @@ const symbolMatcher = (character) => {
 };
 
 var calcApp = (inpt) => {
-    if(!validateInputStringLexer(input)){
+    if(!validateInputStringLexer(inpt)){
         throw "Tokens no válido";
     }
 
