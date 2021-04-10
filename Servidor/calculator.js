@@ -53,7 +53,7 @@ var validateInputStringLexer = (input) => {
 }
 
 var valdiateLexer = (input) => {
-    
+    //^\s*([-+]?)(\d+)(?:\s*([-+*\/])\s*((?:\s[-+])?\d+)\s*)+$
 
 
     return true;
@@ -84,7 +84,6 @@ var getHigestLevel = (inptTokens)=>{
 
         return 2;
     }
-        
     
     var virtualMultiply = 1;
     listOfSymbols.forEach(element =>{        
@@ -113,18 +112,12 @@ var getHigestLevel = (inptTokens)=>{
     })
 
     return higestLevel;
-
-
 };
 
 var tokenizarOperaciones = (tokens) =>{
-    
     var previousLevel = getHigestLevel(tokens);
-
     var newArray= [];
     var operation = new Operation();
-
-    
     var length = tokens.length;
 
     // si el termino esta rodeado de parentesis los elimino
@@ -139,7 +132,11 @@ var tokenizarOperaciones = (tokens) =>{
             length = tokens.length;
         }
     }
-    
+
+    //Corte de control
+    if(length == 1 ){
+        return tokens[0];
+    }
 
     if( length == 3){
         operation.a = tokens[0];
@@ -196,7 +193,6 @@ var calculateMathOperation = (operation) => {
     operation.a = calculateMathOperation(operation.a);
     operation.b = calculateMathOperation(operation.b);
 
-    //var operation = new Operation(calculateMathOperation2(a),calculateMathOperation2(b),operator);
     operation.MakeOperation();
     var resultado = operation.getResult();
 
@@ -205,7 +201,6 @@ var calculateMathOperation = (operation) => {
 
 
 var tokenizar = (inpt) => {
-    //initialize local variables
     var tokens = [];
     var number ="";
     var pushNumberInTerms = () =>{

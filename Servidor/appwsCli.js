@@ -1,11 +1,32 @@
-var io = require('socket.io-client');
+var net = require('net');
 
-var socket = io.connect('http://localhost:5896');
- socket.on('connect', function(data) {
-    socket.emit('request', '1+2+3+4+5+6+7+8+9+10');
+var client = new net.Socket();
+client.connect(5896, 'localhost', function() {
+	console.log('Connected');
+	client.write("1+2");
 
-    socket.on('response', function(data) { 
-      console.log("La respuesta es: " + data);
-    });
 
- });
+});
+
+
+client.on('data', function(data) {
+	console.log('Received: ' + data);
+	client.destroy(); // kill client after server's response
+});
+
+client.on('close', function() {
+	console.log('Connection closed');
+});
+
+// var io = require('socket.io-client');
+
+// var socket = io.connect('http://localhost:5896');
+//  socket.on('connect', function(data) {
+//     socket.emit('requestCalc', '1-2');
+
+    
+//     // socket.on('response', function(data) { 
+//     //   console.log("La respuesta es: " + data);
+//     // });
+
+//  });

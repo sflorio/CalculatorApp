@@ -1,18 +1,30 @@
 const app = require('express')();
 const http = require('http').createServer(app);
-const io = require('socket.io')(http);    
+const io = require('socket.io')(http,{
+  cors: {
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST"]
+  },
+  allowEIO3: true
+});    
 const port = 5896;
 const calculator = require("./calculator.js");
 
+
 io.on('connection', (socket) => {
     console.log('a user connected: id '+ socket.id);
+    
+    socket.on("requestcalculo", data => {
 
-    socket.on('request', function(data) {      
-      console.log(data);
-      var res = calculator.calcApp(data);
-      console.log(res);
-      socket.emit('response', res);
-  });
+      console.log(data.toString('ascii'));
+      
+      var operacion = data.toString('ascii');
+      var res = calculator.calcApp(operacion);
+      
+      socket.emit("respuestacalculo",res);
+      
+    });
+
 });
   
   
