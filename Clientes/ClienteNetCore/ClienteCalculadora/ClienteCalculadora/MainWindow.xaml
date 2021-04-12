@@ -1,0 +1,270 @@
+﻿<Window x:Class="ClienteCalculadora.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClienteCalculadora"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="{materialDesign:MaterialDesignFont}"
+        Title="Calculaldora UB" Height="450" Width="800">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="grdCalculator" 
+                Grid.Column="0"
+                Margin="50">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <Button x:Name="btnAc"
+                    Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                    ToolTip="MaterialDesignFloatingActionMiniLightButton" Cursor="Hand" Click="ClickOperation">
+                    <Label 
+                        Content="AC"
+                        FontSize="18"
+                        Foreground="#cb831d"/>
+                </Button>
+                <Button x:Name="btnBracketLeft"
+                    Grid.Column="1"
+                    Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                    ToolTip="MaterialDesignFloatingActionMiniLightButton" Cursor="Hand" 
+                    Click="ClickOperation">
+                    <Label
+                        FontSize="18"
+                        Content="("
+                        Foreground="#cb831d"/>
+                </Button>
+                <Button x:Name="btnBracketRight"
+                    Grid.Column="2"
+                    Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                    ToolTip="MaterialDesignFloatingActionMiniLightButton" Cursor="Hand"
+                    Click="ClickOperation">
+                    <Label
+                        Content=")"
+                        FontSize="18"
+                        Foreground="#cb831d"/>
+                </Button>
+                <Button x:Name="btnDiv"
+                    Grid.Column="3"
+                    Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                    ToolTip="MaterialDesignFloatingActionMiniLightButton" Cursor="Hand" Click="ClickOperation">
+                    <materialDesign:PackIcon
+                        Kind="Division"
+                        Foreground="#cb831d"/>
+                </Button>
+                <Button x:Name="btnSiete"
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                    ToolTip="MaterialDesignFloatingActionMiniLightButton" Cursor="Hand" Click="ClickOperation">
+                    <Label
+                        Content="7"
+                        Foreground="Black"
+                        FontSize="23"/>
+                </Button>
+                <Button x:Name="btnOcho"
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                    ToolTip="MaterialDesignFloatingActionMiniLightButton" Cursor="Hand" Click="ClickOperation">
+                    <Label
+                        Content="8"
+                        Foreground="Black"
+                        FontSize="23"/>
+                </Button>
+                <Button x:Name="btnNueve"
+                    Grid.Column="2"
+                    Grid.Row="1"
+                    Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                    ToolTip="MaterialDesignFloatingActionMiniLightButton" Cursor="Hand" Click="ClickOperation">
+                    <Label
+                        Content="9"
+                        Foreground="Black"
+                        FontSize="23"/>
+                </Button>
+                <Button x:Name="btnMulti"
+                    Grid.Column="3"
+                    Grid.Row="1"
+                    Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                    ToolTip="MaterialDesignFloatingActionMiniLightButton" Cursor="Hand" Click="ClickOperation">
+                    <materialDesign:PackIcon
+                        Kind="Close"
+                         Foreground="#cb831d"/>
+                </Button>
+                <Button x:Name="btnCuatro"
+                    Grid.Column="0"
+                    Grid.Row="2"
+                    Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                    ToolTip="MaterialDesignFloatingActionMiniLightButton" Cursor="Hand" Click="ClickOperation">
+                    <Label
+                        Content="4"
+                        Foreground="Black"
+                        FontSize="23"/>
+                </Button>
+                <Button x:Name="btnCinco"
+                    Grid.Column="1"
+                    Grid.Row="2"
+                    Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                    ToolTip="MaterialDesignFloatingActionMiniLightButton" Cursor="Hand" Click="ClickOperation">
+                    <Label
+                        Content="5"
+                        Foreground="Black"
+                        FontSize="23"/>
+                </Button>
+                <Button x:Name="btnSeis"
+                    Grid.Column="2"
+                    Grid.Row="2"
+                    Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                    ToolTip="MaterialDesignFloatingActionMiniLightButton" Cursor="Hand" Click="ClickOperation">
+                    <Label
+                        Content="6"
+                        Foreground="Black"
+                        FontSize="23"/>
+                </Button>
+                <Button x:Name="btnMenos"
+                    Grid.Column="3"
+                    Grid.Row="2"
+                    Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                    ToolTip="MaterialDesignFloatingActionMiniLightButton" Cursor="Hand" Click="ClickOperation">
+                    <materialDesign:PackIcon
+                        Kind="Minus"
+                        Foreground="#cb831d"/>
+                </Button>
+                <Button x:Name="btnUno"
+                    Grid.Column="0"
+                    Grid.Row="3"
+                    Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                    ToolTip="MaterialDesignFloatingActionMiniLightButton" Cursor="Hand" Click="ClickOperation">
+                    <Label
+                        Content="1"
+                        Foreground="Black"
+                        FontSize="23"/>
+                </Button>
+                <Button x:Name="btnDos"
+                    Grid.Column="1"
+                    Grid.Row="3"
+                    Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                    ToolTip="MaterialDesignFloatingActionMiniLightButton" Cursor="Hand" Click="ClickOperation">
+                    <Label
+                        Content="2"
+                        Foreground="Black"
+                        FontSize="23"/>
+                </Button>
+                <Button x:Name="btnTres"
+                    Grid.Column="2"
+                    Grid.Row="3"
+                    Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                    ToolTip="MaterialDesignFloatingActionMiniLightButton" Cursor="Hand" Click="ClickOperation">
+                    <Label
+                        Content="3"
+                        Foreground="Black"
+                        FontSize="23"/>
+                </Button>
+                <Button x:Name="btnMas"
+                    Grid.Column="3"
+                    Grid.Row="3"
+                    Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                    ToolTip="MaterialDesignFloatingActionMiniLightButton" Cursor="Hand" Click="ClickOperation">
+                    <materialDesign:PackIcon
+                        Kind="Plus"
+                         Foreground="#cb831d"/>
+                </Button>
+                <Button x:Name="btnCero"
+                    Grid.Column="0"
+                    Grid.Row="4"
+                    Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                    ToolTip="MaterialDesignFloatingActionMiniLightButton" Cursor="Hand" Click="ClickOperation">
+                    <Label
+                        Content="0"
+                        Foreground="Black"
+                        FontSize="23"/>
+                </Button>
+                <Button x:Name="btnDecimal"
+                    Grid.Column="1"
+                    Grid.Row="4"
+                    Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                    ToolTip="MaterialDesignFloatingActionMiniLightButton" Cursor="Hand" Click="ClickOperation">
+                    <materialDesign:PackIcon
+                        Kind="DecimalDecrease"
+                        Height="auto"
+                        Width="auto" />
+                </Button>
+                <Button x:Name="btnPotencia"
+                    Grid.Column="2"
+                    Grid.Row="4"
+                    Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                    ToolTip="MaterialDesignFloatingActionMiniLightButton" Cursor="Hand" Click="ClickOperation">
+                    <materialDesign:PackIcon
+                       Kind="AppleKeyboardControl"
+                       Foreground="#cb831d" />
+                </Button>
+                <Button x:Name="btnIgual"
+                    Grid.Column="3"
+                    Grid.Row="4"
+                    Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                    ToolTip="MaterialDesignFloatingActionMiniLightButton" Cursor="Hand" Click="ClickOperation">
+                    <materialDesign:PackIcon
+                        Kind="Equal"
+                        Foreground="#cb831d"/>
+                </Button>
+            </Grid>
+            <GridSplitter Grid.Column="1" Width="55" HorizontalAlignment="Stretch"/>
+            <Grid Grid.Column="2">
+                <StackPanel Margin="30" Height="300">
+                    <Grid 
+                        Height="40"
+                        Background="WhiteSmoke">
+                        <Label x:Name="lblInput"
+                            Foreground="Black"
+                            FontSize="25"
+                            HorizontalAlignment="Center"
+                            Content=""/>
+                    </Grid>
+                    <Grid  Height="40"
+                          Margin="0,20,0,0"
+                          Background="Gray">
+                        <Label x:Name="lblResult"
+                            FontSize="25"
+                            Foreground="Black"
+                            HorizontalAlignment="Center"
+                            Content=""/>
+                    </Grid>
+                    <Grid VerticalAlignment="Bottom" Margin="0,100,0,0">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label
+                                Content="IP Conectada: "/>
+                                <Label x:Name="lblIp"
+                                    Content="127.0.0.1"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="Puerto: "/>
+                                <Label x:Name="lblPuerto" Content="5896"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</Window>

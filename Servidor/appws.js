@@ -14,14 +14,25 @@ const calculator = require("./calculator.js");
 io.on('connection', (socket) => {
     console.log('a user connected: id '+ socket.id);
     
-    socket.on("requestcalculo", data => {
+    // socket.on("requestcalculo", data => {
+
+    //   console.log(data.toString('ascii'));
+      
+    //   var operacion = data.toString('ascii');
+    //   var res = calculator.calcApp(operacion);
+      
+    //   socket.emit("respuestacalculo",res);
+      
+    // });
+
+    socket.on("data", data => {
 
       console.log(data.toString('ascii'));
       
       var operacion = data.toString('ascii');
       var res = calculator.calcApp(operacion);
       
-      socket.emit("respuestacalculo",res);
+      socket.emit("data",res);
       
     });
 

@@ -4,8 +4,7 @@ import Button from '@material-ui/core/Button';
 import Grid from "@material-ui/core/Grid";
 import GrillaSimbolos from "./grillaSimbolos";
 import { TextField } from '@material-ui/core';
-import socket from "./socket";
-
+import client from "./socket.js";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -19,17 +18,54 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 export default function CalcPanel() {
+    //var client =  new WebSocket('ws://localhost:5896');
      const classes = useStyles();
      const [resultado, setResultado] = useState("");
      const [calculo, setCalculo] = useState("");
+    
+     useEffect(()=> {
+        
+        client.on("connection", () => {
+            console.log('connected')
+        });
+        // client.onopen = () => {
+        //     // on connecting, do nothing but log it to the console
+        //     console.log('connected')
+        //     }
+
+        // client.onerror = (e) => {
+        //     // on connecting, do nothing but log it to the console
+        //     console.log(`error in socket connection: ${ JSON.stringify(e)}`)
+        // }
+
+        // client.onclose = () => {
+        //     // on connecting, do nothing but log it to the console
+        //     console.log(`WebSocket Connection closed`)
+        // }
+
+
+    },[]);
 
      useEffect(() => {
-        socket.on('respuestacalculo', (data) => {
+        client.on('data', (data) => {
             setResultado(data);
             console.log('Received: ' + data);
         });
+        
+        // client.onmessage = evt => {
+        //     // listen to data sent from the websocket server
+        //     const message = JSON.parse(evt.data)
+        //     setResultado( message)
+        //     console.log(message)
+        // }
+    
 
-        return () => {socket.off()}
+        // client.on('data', function(data) {
+        //     console.log('Received: ' + data);
+        //     setResultado(data);
+        //     client.destroy(); // kill client after server's response
+        // });
+
 
      },[resultado]);
 
@@ -40,7 +76,14 @@ export default function CalcPanel() {
 
     function sendCalculation () {
         console.log(calculo);
-        socket.emit("requestcalculo", calculo);
+
+        // on connecting, do nothing but log it to the console
+
+        // var keyByte = new Buffer.from(calculo, "ascii");
+        // console.log(keyByte);
+        // client.binaryType = "arraybuffer";
+        // client.send(keyByte)
+        client.emit("data", calculo);
     };
 
     return (

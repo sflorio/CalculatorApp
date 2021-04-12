@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "jfYtVUiigDsXaThE78ynjEm1Fe2icmvDcQKFUQIAETKaXFP6qHX6hDByKif4s72ANpwqgEC3IyGHhkoCcF0Tqw==",
+  "success": true,
+  "projectFilePath": "C:\\Proyectos\\Node\\Facultad\\CalculatorApp\\Clientes\\ClienteNetCore\\ClienteCalculadora\\ClienteCalculadora\\ClienteCalculadora.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\seba\\.nuget\\packages\\materialdesigncolors\\2.0.0\\materialdesigncolors.2.0.0.nupkg.sha512",
+    "C:\\Users\\seba\\.nuget\\packages\\materialdesignthemes\\4.0.0\\materialdesignthemes.4.0.0.nupkg.sha512",
+    "C:\\Users\\seba\\.nuget\\packages\\showmethexaml\\2.0.0\\showmethexaml.2.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

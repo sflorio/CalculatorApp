@@ -1,0 +1,381 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "H.Engine.IO/1.1.7": {
+        "type": "package",
+        "dependencies": {
+          "H.WebSockets": "1.1.7",
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "compile": {
+          "lib/netstandard2.1/H.Engine.IO.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/H.Engine.IO.dll": {}
+        }
+      },
+      "H.Socket.IO/1.1.7": {
+        "type": "package",
+        "dependencies": {
+          "H.Engine.IO": "1.1.7"
+        },
+        "compile": {
+          "lib/netstandard2.1/H.Socket.IO.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/H.Socket.IO.dll": {}
+        }
+      },
+      "H.WebSockets/1.1.7": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/H.WebSockets.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/H.WebSockets.dll": {}
+        }
+      },
+      "MaterialDesignColors/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/MaterialDesignColors.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/MaterialDesignColors.dll": {}
+        }
+      },
+      "MaterialDesignThemes/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "MaterialDesignColors": "2.0.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/MaterialDesignThemes.Wpf.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/MaterialDesignThemes.Wpf.dll": {}
+        },
+        "build": {
+          "build/MaterialDesignThemes.targets": {}
+        }
+      },
+      "Newtonsoft.Json/12.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "ShowMeTheXAML/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/ShowMeTheXAML.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/ShowMeTheXAML.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "SocketIO4Net.Client/0.6.26": {
+        "type": "package",
+        "dependencies": {
+          "newtonsoft.json": "4.0.8"
+        },
+        "compile": {
+          "lib/net40/SocketIOClient.dll": {},
+          "lib/net40/WebSocket4Net.dll": {}
+        },
+        "runtime": {
+          "lib/net40/SocketIOClient.dll": {},
+          "lib/net40/WebSocket4Net.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "H.Engine.IO/1.1.7": {
+      "sha512": "GdmL/g6602Km1jOCH+IFbntoSRHqjaYEiLs52AlWM2nREBMfI0HuhZ2XB/KLbqzRNhFEHXfNecnPoacKBdgpNw==",
+      "type": "package",
+      "path": "h.engine.io/1.1.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "h.engine.io.1.1.7.nupkg.sha512",
+        "h.engine.io.nuspec",
+        "lib/net45/H.Engine.IO.dll",
+        "lib/net45/H.Engine.IO.xml",
+        "lib/netstandard2.0/H.Engine.IO.dll",
+        "lib/netstandard2.0/H.Engine.IO.xml",
+        "lib/netstandard2.1/H.Engine.IO.dll",
+        "lib/netstandard2.1/H.Engine.IO.xml",
+        "nuget_icon.png"
+      ]
+    },
+    "H.Socket.IO/1.1.7": {
+      "sha512": "tTW3V1B4/8sGu+bixfqY+61avt6W9dOA+Wwh4iHFWgELroBAdvsPTXdDOyBisj97q7lsPPvOsxpc1D4IURaKGg==",
+      "type": "package",
+      "path": "h.socket.io/1.1.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "h.socket.io.1.1.7.nupkg.sha512",
+        "h.socket.io.nuspec",
+        "lib/net45/H.Socket.IO.dll",
+        "lib/net45/H.Socket.IO.xml",
+        "lib/netstandard2.0/H.Socket.IO.dll",
+        "lib/netstandard2.0/H.Socket.IO.xml",
+        "lib/netstandard2.1/H.Socket.IO.dll",
+        "lib/netstandard2.1/H.Socket.IO.xml",
+        "nuget_icon.png"
+      ]
+    },
+    "H.WebSockets/1.1.7": {
+      "sha512": "8DYTHTRwfugEAw02Xdb8OP7p1Senub6eHKRxcpiMVzJ/eFCxr6t+x9g8KLzzgTZ9+rpKKKlhR93/5iX/U+nj2A==",
+      "type": "package",
+      "path": "h.websockets/1.1.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "h.websockets.1.1.7.nupkg.sha512",
+        "h.websockets.nuspec",
+        "lib/net45/H.WebSockets.dll",
+        "lib/net45/H.WebSockets.xml",
+        "lib/netstandard2.0/H.WebSockets.dll",
+        "lib/netstandard2.0/H.WebSockets.xml",
+        "lib/netstandard2.1/H.WebSockets.dll",
+        "lib/netstandard2.1/H.WebSockets.xml",
+        "nuget_icon.png"
+      ]
+    },
+    "MaterialDesignColors/2.0.0": {
+      "sha512": "+JoghC3QRK0u9Wul1To1ORjcfTbFTVzFPjJ02H7VREOdNzIIn427e8G9gP9hXu9pm1r2OneLnoCG/lTma5cG2w==",
+      "type": "package",
+      "path": "materialdesigncolors/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "images/MaterialDesignColors.Icon.png",
+        "lib/net452/MaterialDesignColors.dll",
+        "lib/net452/MaterialDesignColors.pdb",
+        "lib/netcoreapp3.1/MaterialDesignColors.dll",
+        "lib/netcoreapp3.1/MaterialDesignColors.pdb",
+        "materialdesigncolors.2.0.0.nupkg.sha512",
+        "materialdesigncolors.nuspec"
+      ]
+    },
+    "MaterialDesignThemes/4.0.0": {
+      "sha512": "+n5oWHuRiYL/gUw2XfQHCRZqHtU8KbrdurgU0IcO98Zsyhw4BvggodfXY8veRtbjjmM9EJ/sG2yKBrgPOGX4JQ==",
+      "type": "package",
+      "path": "materialdesignthemes/4.0.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/MaterialDesignThemes.targets",
+        "build/Resources/Roboto/Roboto-Black.ttf",
+        "build/Resources/Roboto/Roboto-BlackItalic.ttf",
+        "build/Resources/Roboto/Roboto-Bold.ttf",
+        "build/Resources/Roboto/Roboto-BoldItalic.ttf",
+        "build/Resources/Roboto/Roboto-Italic.ttf",
+        "build/Resources/Roboto/Roboto-Light.ttf",
+        "build/Resources/Roboto/Roboto-LightItalic.ttf",
+        "build/Resources/Roboto/Roboto-Medium.ttf",
+        "build/Resources/Roboto/Roboto-MediumItalic.ttf",
+        "build/Resources/Roboto/Roboto-Regular.ttf",
+        "build/Resources/Roboto/Roboto-Thin.ttf",
+        "build/Resources/Roboto/Roboto-ThinItalic.ttf",
+        "build/Resources/Roboto/RobotoCondensed-Bold.ttf",
+        "build/Resources/Roboto/RobotoCondensed-BoldItalic.ttf",
+        "build/Resources/Roboto/RobotoCondensed-Italic.ttf",
+        "build/Resources/Roboto/RobotoCondensed-Light.ttf",
+        "build/Resources/Roboto/RobotoCondensed-LightItalic.ttf",
+        "build/Resources/Roboto/RobotoCondensed-Regular.ttf",
+        "images/MaterialDesignThemes.Icon.png",
+        "lib/net452/MaterialDesignThemes.Wpf.dll",
+        "lib/net452/MaterialDesignThemes.Wpf.pdb",
+        "lib/net452/MaterialDesignThemes.Wpf.xml",
+        "lib/netcoreapp3.1/MaterialDesignThemes.Wpf.dll",
+        "lib/netcoreapp3.1/MaterialDesignThemes.Wpf.pdb",
+        "lib/netcoreapp3.1/MaterialDesignThemes.Wpf.xml",
+        "materialdesignthemes.4.0.0.nupkg.sha512",
+        "materialdesignthemes.nuspec",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "Newtonsoft.Json/12.0.3": {
+      "sha512": "6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+      "type": "package",
+      "path": "newtonsoft.json/12.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.12.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "ShowMeTheXAML/2.0.0": {
+      "sha512": "ljDrkSyGhx3EKIq73c9317m7NsvTjCKVdO0vnqzjwdWAgFkpdfrEd3Nn6uF/Mc+QUTSUfFfjmONJDfYSPwCB3g==",
+      "type": "package",
+      "path": "showmethexaml/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid10.0/ShowMeTheXAML.dll",
+        "lib/monoandroid90/ShowMeTheXAML.dll",
+        "lib/net472/ShowMeTheXAML.dll",
+        "lib/netcoreapp3.1/ShowMeTheXAML.dll",
+        "lib/netstandard2.0/ShowMeTheXAML.dll",
+        "lib/uap10.0.17763/ShowMeTheXAML.dll",
+        "lib/uap10.0.17763/ShowMeTheXAML.pri",
+        "lib/xamarinios10/ShowMeTheXAML.dll",
+        "lib/xamarinmac20/ShowMeTheXAML.dll",
+        "showmethexaml.2.0.0.nupkg.sha512",
+        "showmethexaml.nuspec"
+      ]
+    },
+    "SocketIO4Net.Client/0.6.26": {
+      "sha512": "KOV5M/3xAOUNXc2GXYA8GkwMemfGBjut8gyjU5/tTGwTZl2mBtS6J426pyGuxDr/tzXozu6QHVlCLpum1HigdQ==",
+      "type": "package",
+      "path": "socketio4net.client/0.6.26",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/SocketIOClient.XML",
+        "lib/net40/SocketIOClient.dll",
+        "lib/net40/SocketIOClient.pdb",
+        "lib/net40/WebSocket4Net.dll",
+        "lib/net40/WebSocket4Net.pdb",
+        "socketio4net.client.0.6.26.nupkg.sha512",
+        "socketio4net.client.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.1": [
+      "H.Socket.IO >= 1.1.7",
+      "MaterialDesignThemes >= 4.0.0",
+      "ShowMeTheXAML >= 2.0.0",
+      "SocketIO4Net.Client >= 0.6.26"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\seba\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Proyectos\\Node\\Facultad\\CalculatorApp\\Clientes\\ClienteNetCore\\ClienteCalculadora\\ClienteCalculadora\\ClienteCalculadora.csproj",
+      "projectName": "ClienteCalculadora",
+      "projectPath": "C:\\Proyectos\\Node\\Facultad\\CalculatorApp\\Clientes\\ClienteNetCore\\ClienteCalculadora\\ClienteCalculadora\\ClienteCalculadora.csproj",
+      "packagesPath": "C:\\Users\\seba\\.nuget\\packages\\",
+      "outputPath": "C:\\Proyectos\\Node\\Facultad\\CalculatorApp\\Clientes\\ClienteNetCore\\ClienteCalculadora\\ClienteCalculadora\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\seba\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.1"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "dependencies": {
+          "H.Socket.IO": {
+            "target": "Package",
+            "version": "[1.1.7, )"
+          },
+          "MaterialDesignThemes": {
+            "target": "Package",
+            "version": "[4.0.0, )"
+          },
+          "ShowMeTheXAML": {
+            "target": "Package",
+            "version": "[2.0.0, )"
+          },
+          "SocketIO4Net.Client": {
+            "target": "Package",
+            "version": "[0.6.26, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WPF": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.407\\RuntimeIdentifierGraph.json"
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"SocketIO4Net.Client 0.6.26\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\" en lugar de la plataforma de destino del proyecto \".NETCoreApp,Version=v3.1\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "SocketIO4Net.Client",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
+}
